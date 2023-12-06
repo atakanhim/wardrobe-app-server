@@ -1,0 +1,6 @@
+@wardrobe.API_HostAddress = http://localhost:5002
+
+GET {{wardrobe.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

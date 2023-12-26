@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D69316A4-0678-4807-923C-ED9F79042E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wardrobe.API", "Presentation\wardrobe.API\wardrobe.API.csproj", "{DB028E81-79D7-4CB6-B27A-49E42934407C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wardrobe.API", "Presentation\wardrobe.API\wardrobe.API.csproj", "{DB028E81-79D7-4CB6-B27A-49E42934407C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wardrobe.Infrastructure", "Infrastructure\wardrobe.Infrastructure\wardrobe.Infrastructure.csproj", "{6927D876-10D8-41F1-A008-926D6298B574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wardrobe.Infrastructure", "Infrastructure\wardrobe.Infrastructure\wardrobe.Infrastructure.csproj", "{6927D876-10D8-41F1-A008-926D6298B574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wardrobe.Persistence", "Infrastructure\wardrobe.Persistence\wardrobe.Persistence.csproj", "{E724C68B-F8C9-40A2-82B5-93C5A56210E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wardrobe.Persistence", "Infrastructure\wardrobe.Persistence\wardrobe.Persistence.csproj", "{E724C68B-F8C9-40A2-82B5-93C5A56210E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wardrobe.Application", "Core\wardrobe.Application\wardrobe.Application.csproj", "{3C96D3EC-4030-46F7-932B-9B289945B77B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wardrobe.Application", "Core\wardrobe.Application\wardrobe.Application.csproj", "{3C96D3EC-4030-46F7-932B-9B289945B77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wardrobe.Domain", "Core\wardrobe.Domain\wardrobe.Domain.csproj", "{6B48F591-721B-4B40-B79D-2C5DB9049390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wardrobe.Domain", "Core\wardrobe.Domain\wardrobe.Domain.csproj", "{6B48F591-721B-4B40-B79D-2C5DB9049390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

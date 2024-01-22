@@ -20,7 +20,7 @@ namespace wardrobe.Persistence
             // context
             //microsoft.extension.configrutaion added json dosyayı okucaz
 
-            services.AddDbContext<WardrobeDBContext>(options => options.UseSqlServer(Configuration.ConnectionString));
+            services.AddDbContext<WardrobeDBContext>(options => options.UseNpgsql(Configuration.ConnectionString));
 
             services.AddIdentity<AppUser, AppRole>(options =>
             {

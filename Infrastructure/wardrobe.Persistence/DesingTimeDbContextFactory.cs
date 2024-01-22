@@ -17,7 +17,7 @@ namespace wardrobe.Persistence
             //hangi options parametlerini default olarak kabul etmesi gerektigini belirtiyor.
 
             DbContextOptionsBuilder<WardrobeDBContext> dbContextOptionsBuilder = new();
-            dbContextOptionsBuilder.UseSqlServer(Configuration.ConnectionString);
+            dbContextOptionsBuilder.UseNpgsql(Configuration.ConnectionString);
             return new WardrobeDBContext(dbContextOptionsBuilder.Options); // burda dbconteximizde options verdik
         }
     }

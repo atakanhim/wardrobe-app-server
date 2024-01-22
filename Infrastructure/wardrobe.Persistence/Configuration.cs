@@ -19,7 +19,7 @@ namespace wardrobe.Persistence
 
                 configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../Presentation/wardrobe.API"));
                 configurationManager.AddJsonFile("appsettings.json");
-                return configurationManager.GetConnectionString("MsSQL");
+                return configurationManager.GetConnectionString("PostgreSql");
             }
         }
     }

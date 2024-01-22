@@ -42,9 +42,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-app.UseRouting();
-app.UseCors();
 
+
+
+
+app.UseRouting();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -52,6 +54,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
+app.UseCors(options =>
+{
+    options.AllowAnyOrigin(); // Tüm kaynaklara erişime izin verir
+    options.AllowAnyMethod(); // Tüm HTTP metodlarına izin verir
+    options.AllowAnyHeader(); // Tüm başlıklara izin verir
+});
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

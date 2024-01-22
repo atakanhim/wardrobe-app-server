@@ -26,7 +26,7 @@ namespace wardrobe.API.Controllers
             return Ok(response);
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+      //  [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersQueryRequest getAllUsersQueryRequest)
         {

@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using wardrobe.Application.Abstractions.Services;
 using wardrobe.Application.DTOs.User;
 using wardrobe.Application.Exceptions;
@@ -72,7 +74,6 @@ namespace wardrobe.Persistence.Services
                 UserName = user.UserName,
                 TwoFactorEnabled = user.TwoFactorEnabled
             }).ToList();
-
             return userList;
         }
 

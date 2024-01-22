@@ -70,7 +70,7 @@ namespace wardrobe.Persistence.Services
                 await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, refreshTokenLifeTimeSecond);
                 return token;
             }
-            throw new Exception("Invalid external authentication.");
+            throw new Exception("custom error,Invalid external authentication.");
         }
         
         public async Task<Token> GoogleLoginAsync(string idToken, int accessTokenLifeTimeSecond,int refreshTokenLifeTimeSecond)
@@ -79,13 +79,20 @@ namespace wardrobe.Persistence.Services
             {
                 Audience = new List<string> { _configuration["ExternalLoginSettings:Google:Client_ID"] }
             };
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
+                var info = new UserLoginInfo("GOOGLE", payload.Subject, "GOOGLE");
+                Domain.Entities.Identity.AppUser user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
 
-            var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
+                return await CreateUserExternalAsync(user, payload.Email, payload.Name, info, accessTokenLifeTimeSecond, refreshTokenLifeTimeSecond);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            } 
 
-            var info = new UserLoginInfo("GOOGLE", payload.Subject, "GOOGLE");
-            Domain.Entities.Identity.AppUser user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
-
-            return await CreateUserExternalAsync(user, payload.Email, payload.Name, info, accessTokenLifeTimeSecond, refreshTokenLifeTimeSecond);
+         
         }
 
         public async Task<Token> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTimeSecond, int refreshTokenLifeTimeSecond)
